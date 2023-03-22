@@ -1,0 +1,19 @@
+<nav class="nav-down">
+    <a href="index.html" class="logo">
+        <img class="logo-img" src="assets/Logo.png" alt="Logo">
+    </a>
+    <ul>
+      <li class="dropdown"><a class='menu dropdown-toggle' data-toggle="dropdown" href="#">Design<span class="caret"></span></a>
+          <ul class="dropdown-menu">
+            <li><a href="cord.html">Cord: App Design</a></li>
+            <li><a href="blue.html">The Oxford Blue: Website Design</a></li>
+            <li><a href="envaluate.html">Envaluate: App Design</a></li>
+            <li><a href="personal.html">Portfolio: Website Design</a></li>
+            <li><a href="graphicdesign.html">Freelance: Graphic Design</a></li>
+          </ul>
+      </li>
+      <li><a class='menu' href="writing.html">Writing</a></li>
+      <li><a class='menu' href="multimedia.html">Multimedia</a></li>
+      <li><a class='menu' href="press.html">Press</a></li>
+    </ul>
+</nav>
