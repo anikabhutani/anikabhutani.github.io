@@ -68,16 +68,16 @@ body{
 
 /* animation*/
 .nav-up {
-  top: -70px; 
+  top: -70px;
 }
 
-.hidden { 
+.hidden {
 /*
   -webkit-transition: opacity 0.3s;
     -moz-transition: opacity 0.3s;
     -o-transition: opacity 0.3s;
     transition: opacity 0.3s;
-  opacity: 0; 
+  opacity: 0;
 */
   opacity: 0;
     -webkit-animation-name: fadeOut;
@@ -121,7 +121,7 @@ progress {
     right: -5px;
     padding: 0px;
     position: absolute;
-    
+
     -webkit-transform: rotate(90deg); /* Chrome, Safari, Opera */
     transform: rotate(90deg);
     transform-origin: 100% 0%;
@@ -176,50 +176,50 @@ progress::-moz-progress-bar {
 
 /*Layout for big desktop >1922px*/
 @media (min-width: 1922px) {
-    
+
     #home-space {
         height: 498px;
         display: block;
     }
-    
+
     #profile {
         width: 20%;
     }
-    
+
     #profile p {
         margin-top: 25px;
         width: 80%;
     }
-    
+
     .project-img-long {
         max-width: 158%;
 /*        padding-right: 10%;*/
     }
-    
+
     .project-img-med {
         width: 626px;
     }
-    
+
     .project-vid-long {
         width: 100vw;
         float: right;
         padding-left: 100px;
         padding-right: 4%;
     }
-    
+
     .sidebar {
         padding-left: 7%;
         padding-right: 50px;
     }
-    
+
     .project {
-        padding: 22px 100px 42px 200px;   
+        padding: 22px 100px 42px 200px;
     }
-    
+
     footer{
-    padding-left: 200px; 
+    padding-left: 200px;
     }
-    
+
 }
 
 
@@ -230,13 +230,13 @@ progress::-moz-progress-bar {
         height: 498px;
         display: block;
     }
-    
+
     #profile p {
         margin-top: 25px;
         width: 73%;
     }
 
-        
+
     #profile {
         top: 10%;
         display: block;
@@ -244,51 +244,51 @@ progress::-moz-progress-bar {
         max-width: 300px;
         width: 27%;
     }
-    
+
     .sidebar {
         position: fixed;
         height: 100%;
         width: 30%;
         display: inline-block;
     }
-    
+
     #works {
         left: 30%;
         position: relative;
         display: block;
         width: 70%;
     }
-    
+
     nav {
         z-index: 3;
     }
-    
+
     .project {
-        padding: 22px 100px 42px 100px;   
+        padding: 22px 100px 42px 100px;
     }
 
-    
+
     #profile h2 {
         margin-top: 82px;
     }
-    
+
     .project-img-med {
         width: 626px;
     }
-    
+
     .project-img-long {
         max-width: 158%;
 /*        padding-right: 10%;*/
     }
-    
-    
+
+
     .project-vid-long {
         width: 100vw;
         float: right;
         padding-left: 100px;
         padding-right: 4%;
     }
-    
+
     footer{
     padding-left: 100px;
     }
@@ -302,30 +302,30 @@ progress::-moz-progress-bar {
         display: block;
         position: fixed;
     }
-    
+
     .sidebar {
         position: fixed;
         height: 100%;
         width: 30%;
         display: inline-block;
     }
-    
+
     #works {
         left: 30%;
         position: relative;
         display: block;
         width: 70%;
     }
-    
+
     nav {
         z-index: 3;
     }
-    
-    
+
+
     #profile h2 {
         margin-top: 82px;
     }
-    
+
     .project-img-med {
         width: 90%;
     }
@@ -339,7 +339,7 @@ progress::-moz-progress-bar {
     .illustration {
         display: none;
     }
-    
+
     #home-space {
         display: none;
     }
@@ -352,40 +352,40 @@ progress::-moz-progress-bar {
         height: 498px;
         display: block;
     }
-    
+
     #me {
         width: 358.39px;
         top: 140px;
         left: 241.906px;
 /*        left: 27%;*/
     }
-    
+
     #data {
         width: 95.55px;
         top: 140px;
         left: 134.4px;
     }
-    
+
     #pingpong {
         width: 89.59px;
         top: 370px;
         left: 161.28px;
     }
-    
+
     #code {
         width: 90.55px;
         top: 134px;
 /*        left: 67%;*/
         left: 600.312px;
     }
-    
+
     #world {
         width: 89.59px;
         top: 369px;
 /*        left: 64.5%;*/
         left: 577.906px;
     }
-    
+
     footer{
     padding-left: 100px;
     }
@@ -395,7 +395,7 @@ progress::-moz-progress-bar {
     .illustration {
         display: none;
     }
-    
+
     #home-space {
         display: none;
     }
@@ -409,7 +409,7 @@ progress::-moz-progress-bar {
         position: relative;
         padding-left: 0px;
     }
-    
+
     .sidebar {
         position: relative;
         width: 100%;
@@ -418,61 +418,61 @@ progress::-moz-progress-bar {
         padding-left: 100px;
         padding-right: 50px;
     }
-    
+
     #works {
         position: relative;
         display: block;
         width: 100%;
     }
-    
+
     nav {
         z-index: 6;
-    }   
-    
-    .project {
-    padding: 22px 84px 42px 84px;   
     }
-    
+
+    .project {
+    padding: 22px 84px 42px 84px;
+    }
+
     footer {
     margin-left: 84px;
     }
-    
+
     .project-sum{
         display: none;
     }
-    
-    
+
+
     #profile p {
         margin-top: 25px;
         max-width: 60%;
     }
-    
+
     #profile h2 {
     margin-top: 120px;
     }
-    
+
     progress {
     display: none;
     }
-    
+
     .project-img-long {
     width: 100%;
     }
-    
+
     .project-img-med {
         width: 626px;
     }
-    
+
     .project-vid-long {
     width: 100vw;
     float: right;
     padding-left: 100px;
     }
-    
+
     #intro-pic {
         display: none;
     }
-    
+
 }
 
 @media (min-width:480px) and (max-width:1921px) {
@@ -486,33 +486,33 @@ progress::-moz-progress-bar {
 /*Typography and Layout for non-mobile*/
 
 @media (min-width:480px) {
-    
+
     .menu {
     font-size: 14px;
     margin: 0px 20px 0px 20px;
     letter-spacing: .7px;
-    }   
-    
+    }
+
     nav .logo {
     margin-top: 20px;
     margin-left: 84px;
     }
-    
-    
+
+
     #intro-content {
         width: 90%;
     }
-    
+
     footer{
     margin-top: 60px;
     padding-bottom: 30px;
     }
-    
+
     hr {
         margin-top: 30px;
         margin-bottom: 60px;
     }
-    
+
     h1{
     font-size: 32px;
     line-height: 1.375;
@@ -527,7 +527,7 @@ progress::-moz-progress-bar {
     letter-spacing: 1.3px;
     margin-top: 40px;
     }
-    
+
     h2{
         font-size: 25px;
         letter-spacing: .7px;
@@ -538,12 +538,12 @@ progress::-moz-progress-bar {
         margin-top: 25px;
         margin-bottom: 25px;
     }
-    
-    
+
+
     h3.project-number {
-        margin-bottom: -15px; 
+        margin-bottom: -15px;
     }
-    
+
 
     p, li{
     font-size: 17px;
@@ -555,7 +555,7 @@ progress::-moz-progress-bar {
     margin: 15px 0px 15px 0px;
     max-width: 90%;
     }
-    
+
 
     h4 {
     font-size: 13px;
@@ -563,7 +563,7 @@ progress::-moz-progress-bar {
     letter-spacing: 0.7px;
     margin: 30px 0px 30px 0px;
     }
-    
+
     .project h4 {
         margin-top: 15px;
         max-width: 90%;
@@ -573,7 +573,7 @@ progress::-moz-progress-bar {
     .project-sum h4 {
         margin-bottom: 60px;
     }
-    
+
 /*
     .indent {
     transform: translateX(20px);
@@ -587,34 +587,34 @@ progress::-moz-progress-bar {
     margin: 25px 0px 25px 0px;
     letter-spacing: .62px;
     }
-    
-    
-    
-    
+
+
+
+
     /*images in non-mobile*/
     .logo-img {
         width: 22px;
         height: 23px;
-    }  
-    
+    }
+
     #profile-pic {
         height: 180px;
         display: block;
-        margin: 100px auto 50px auto;   
+        margin: 100px auto 50px auto;
     }
 
     .social {
         width: 25px;
         height: 25spx;
     }
-    
+
     #social ul {
         /*social icons in non-mobile*/
         margin-top: 40px;
         margin-bottom: 40px;
         padding: 0;
     }
-    
+
     /*Project Images*/
     .ui {
         display: block;
@@ -622,34 +622,34 @@ progress::-moz-progress-bar {
         padding-top: 10px;
         height: 519px;
         -webkit-transition: all 200ms ease-in;
-        -webkit-transform: scale(1); 
+        -webkit-transform: scale(1);
         -ms-transition: all 200ms ease-in;
-        -ms-transform: scale(1); 
+        -ms-transform: scale(1);
         -moz-transition: all 200ms ease-in;
         -moz-transform: scale(1);
         transition: all 200ms ease-in;
     }
-    
+
     .ui-short{
         height: 300px;
         margin-top: 40px;
     }
-    
+
     .ui:hover{
         -webkit-transition: all 200ms ease-in;
-        -webkit-transform: scale(1.015); 
+        -webkit-transform: scale(1.015);
         -ms-transition: all 200ms ease-in;
-        -ms-transform: scale(1.015); 
+        -ms-transform: scale(1.015);
         -moz-transition: all 200ms ease-in;
         -moz-transform: scale(1.015);
         transition: all 200ms ease-in;
     }
-    
+
     .project-ui-div {
         display: block;
         width: 90%;
     }
-    
+
     #my-pic {
         width: 500px;
     }
@@ -662,55 +662,55 @@ progress::-moz-progress-bar {
     .space500px {
     padding-bottom: 0px;
     }
-    
+
     .illustration {
         display: none;
     }
-    
+
     nav {
         z-index: 6;
-    }  
-    
+    }
+
     .menu {
         font-size: 12px;
         margin: 10px;
         letter-spacing: .7px;
-    }   
-    
+    }
+
     .dropdown-menu>li>a {
         font-size: 12px;
         letter-spacing: .7px;
     }
-    
-    
+
+
     nav .logo {
         margin-left: 8%;
         margin-top: 23px;
     }
-    
+
     .sidebar {
         padding-left: 8%;
         padding-right: 8%;
     }
-    
+
     .project-sum{
         display: none;
     }
-    
+
     .project {
-        padding: 20px 8% 20px 8%;   
+        padding: 20px 8% 20px 8%;
     }
-    
+
     footer {
         padding-left: 8%;
         margin-top: 30px;
         padding-bottom: 20px;
     }
-    
+
     hr {
         margin-bottom: 60px;
     }
-    
+
     h1{
         font-size: 20px;
         line-height: 1.2;
@@ -718,7 +718,7 @@ progress::-moz-progress-bar {
         margin-top: 30px;
         margin-bottom: 35px;
     }
-    
+
     h2{
         font-size: 16px;
         letter-spacing: 1.3px;
@@ -732,7 +732,7 @@ progress::-moz-progress-bar {
         letter-spacing: 1.3px;
         margin-top: 20px;
     }
-    
+
     #profile h2 {
         margin-top: 80px;
     }
@@ -761,20 +761,20 @@ progress::-moz-progress-bar {
         margin: 25px 0px 25px 0px;
         letter-spacing: .62px;
     }
-    
-    
+
+
     /*images in mobile*/
     .logo-img {
         width: 15px;
         height: 16px;
-    }   
+    }
 
     .social {
         width: 20px;
         height: 20px;
         z-index: 4;
     }
-    
+
     #social ul {
     /*social icons in mobile*/
         margin-top: 30px;
@@ -782,38 +782,38 @@ progress::-moz-progress-bar {
         padding: 0px;
         margin-left: 0px;
     }
-    
+
     progress {
         display: none;
     }
-    
+
     /*Project Images*/
     .ui {
         display: block;
         margin: 30px auto 0px auto;
         width: 50%;
     }
-    
+
     .project-img-long {
         width: 100%;
     }
-    
+
     .project-img-med {
         width: 100%;
     }
-    
+
     .project-vid-long {
         width: 100vw;
         float: right;
         padding-left: 60px;
     }
-    
+
     #profile-pic {
         width: 30%;
         display: block;
         margin: 30px auto 30px auto;
     }
-    
+
     #my-pic {
         width: 85%;
     }
@@ -886,7 +886,7 @@ nav>ul>li>a:hover{
 
 .dropdown-menu>li>a:hover {
     background-color: #fff;
-    color: #F15A95; 
+    color: #F15A95;
 }
 
 .dropdown-menu>li>a.current-proj {
@@ -910,7 +910,7 @@ nav>ul>li>a:hover{
     -o-transition: all 0.2s ease-out;  /* Opera 10.5+ */
     -webkit-transition: all 0.2s ease-out;  /* Saf3.2+, Chrome */
     -ms-transition: all 0.2s ease-out;  /* IE10? */
-    transition: all 0.2s ease-out; 
+    transition: all 0.2s ease-out;
 }
 
 .sidebar.profile-sidebar {
@@ -960,7 +960,7 @@ h2 a:hover{
 
 
 h3{
-    font-weight: 500; 
+    font-weight: 500;
     text-transform: uppercase;
     color: #E3518A;
     z-index: 2;
@@ -1043,7 +1043,7 @@ h5 {
 }
 
 .anchor {
-  display: block; 
+  display: block;
   color: #DBDBDB;
   font-size: 13px;
   line-height: 2;
@@ -1052,7 +1052,7 @@ h5 {
 .anchor:hover{
   color: #e3518a;
 }
-    
+
 .active {
   color: #e3518a;
   font-weight: 500;
@@ -1066,7 +1066,7 @@ h5 {
     color: #E3518A;
 }
 
-a .details:visited { 
+a .details:visited {
     color: #484848;
 }
 
@@ -1116,7 +1116,7 @@ ul {
     filter: grayscale(20%);
 /*
     -webkit-transition: .3s ease-in-out;
-    -moz-transition: .3s ease-in-out; 
+    -moz-transition: .3s ease-in-out;
     -o-transition: .3s ease-in-out;
 */
 }
@@ -1124,10 +1124,10 @@ ul {
 
 /*
 #schools:hover {
-    -webkit-filter: grayscale(0%);  
+    -webkit-filter: grayscale(0%);
     filter: grayscale(0%);
     -webkit-transition: .3s ease-in-out;
-    -moz-transition: .3s ease-in-out; 
+    -moz-transition: .3s ease-in-out;
     -o-transition: .3s ease-in-out;
 }
 */
@@ -1148,15 +1148,15 @@ ul {
   -moz-transition: .2s ease-in-out;
   -o-filter: grayscale(0%);
   -o-transition: .2s ease-in-out;
-} 
+}
 
 .social {
   filter: grayscale(100%) opacity(70%);
   -webkit-filter: grayscale(100%) opacity(70%);
   -webkit-transition: .2s ease-in-out;
-  -moz-filter: grayscale(100%) opacity(70%); 
+  -moz-filter: grayscale(100%) opacity(70%);
   -moz-transition: .2s ease-in-out;
-  -o-filter: grayscale(100%) opacity(70%); 
+  -o-filter: grayscale(100%) opacity(70%);
   -o-transition: .2s ease-in-out;
 }
 
@@ -1185,9 +1185,9 @@ ul {
 
 .logo-img:hover {
         -webkit-transition: all 200ms ease-in;
-        -webkit-transform: scale(1.2); 
+        -webkit-transform: scale(1.2);
         -ms-transition: all 200ms ease-in;
-        -ms-transform: scale(1.2); 
+        -ms-transform: scale(1.2);
         -moz-transition: all 200ms ease-in;
         -moz-transform: scale(1.2);
         transition: all 200ms ease-in;
@@ -1195,9 +1195,9 @@ ul {
 
 .logo-img {
     -webkit-transition: all 200ms ease-in;
-        -webkit-transform: scale(1); 
+        -webkit-transform: scale(1);
         -ms-transition: all 200ms ease-in;
-        -ms-transform: scale(1); 
+        -ms-transform: scale(1);
         -moz-transition: all 200ms ease-in;
         -moz-transform: scale(1);
         transition: all 200ms ease-in;
@@ -1210,7 +1210,7 @@ ul {
     margin: auto;
     padding-right: 70px;
     overflow: hidden;
-    
+
 }
 
 /*Home Illustrations*/
@@ -1267,14 +1267,8 @@ p.sentence1 {
 
 /*
 .arrow-down {
-    -webkit-transform: rotate(90deg);  Chrome, Safari, Opera 
+    -webkit-transform: rotate(90deg);  Chrome, Safari, Opera
     transform: rotate(90deg);
     display: inline-block;
 }
 */
-
-
-
-
-
-
