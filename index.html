@@ -1,102 +1,731 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="utf-8">
-    <title>Anika Bhutani</title>
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width,initial-scale=1.0"/>
+<title>Anika Bhutani</title>
+<link rel="preconnect" href="https://fonts.googleapis.com"/>
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+<link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;1,9..40,300&display=swap" rel="stylesheet"/>
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+:root{
+  --navy:#0a1628;--blue:#1a3a6e;--mid:#2563a8;--sky:#4b8fd4;--pale:#dbeafe;--accent:#60a5fa;--off:#f0f4fb;--white:#ffffff;--text:#0f172a;--muted:#4a5568;--light:#94a3b8;--border:#c7d8ef;--serif:'DM Serif Display',Georgia,serif;--sans:'DM Sans',system-ui,sans-serif;
+}
+html{scroll-behavior:smooth}
+body{font-family:var(--sans);background:var(--white);color:var(--text);line-height:1.6;font-size:16px;overflow-x:hidden}
 
-<!--Bootstrap-->
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
-<!--Jquery-->
-    <script src ="https://code.jquery.com/jquery-latest.min.js"></script>
+nav{position:fixed;top:0;left:0;right:0;z-index:100;background:rgba(255,255,255,0.92);backdrop-filter:blur(12px);border-bottom:1px solid var(--border);padding:0 2rem}
+.nav-inner{max-width:1000px;margin:0 auto;display:flex;align-items:center;justify-content:space-between;height:56px}
+.nav-logo{font-family:var(--serif);font-size:1.1rem;color:var(--navy);text-decoration:none;letter-spacing:-0.01em}
+.nav-links{display:flex;gap:1.75rem;list-style:none}
+.nav-links a{font-size:0.85rem;color:var(--muted);text-decoration:none;letter-spacing:0.02em;font-weight:400;transition:color 0.2s}
+.nav-links a:hover{color:var(--mid)}
 
-<!--Google icons-->
-    <link href="https://fonts.googleapis.com/icon?family=Material+Icons"
-      rel="stylesheet">
-    <link href="https://afeld.github.io/emoji-css/emoji.css" rel="stylesheet">
+section{padding:5rem 2rem}
+.container{max-width:1000px;margin:0 auto}
+.section-label{font-size:0.72rem;letter-spacing:0.14em;text-transform:uppercase;color:var(--sky);font-weight:500;margin-bottom:0.6rem}
 
-<!--Google fonts-->
-    <link href="https://fonts.googleapis.com/css?family=Rubik:300,400,400i,500,700" rel="stylesheet">
+/* HERO */
+#hero{padding:8rem 2rem 5rem;background:linear-gradient(160deg,#f5f8ff 0%,#e8f0fd 50%,#dbeafe 100%);position:relative;overflow:hidden}
+#hero::before{content:'';position:absolute;top:-80px;right:-100px;width:500px;height:500px;border-radius:50%;background:radial-gradient(circle,rgba(37,99,168,0.08) 0%,transparent 70%);pointer-events:none}
+#hero::after{content:'';position:absolute;bottom:-60px;left:-80px;width:400px;height:400px;border-radius:50%;background:radial-gradient(circle,rgba(75,143,212,0.07) 0%,transparent 70%);pointer-events:none}
+.hero-inner{max-width:1000px;margin:0 auto;display:grid;grid-template-columns:1fr auto;gap:3rem;align-items:center}
+.hero-tag{display:inline-flex;align-items:center;gap:6px;background:rgba(37,99,168,0.09);border:1px solid rgba(37,99,168,0.18);border-radius:20px;padding:4px 14px;font-size:0.78rem;color:var(--mid);margin-bottom:1.25rem;font-weight:500}
+.dot{width:7px;height:7px;border-radius:50%;background:#22c55e;animation:pulse 2s infinite}
+@keyframes pulse{0%,100%{opacity:1;transform:scale(1)}50%{opacity:0.6;transform:scale(0.85)}}
+h1{font-family:var(--serif);font-size:clamp(2.4rem,5vw,3.5rem);color:var(--navy);line-height:1.12;letter-spacing:-0.02em;margin-bottom:1rem}
+h1 em{font-style:italic;color:var(--mid)}
+.hero-sub{font-size:1.05rem;color:var(--muted);max-width:480px;line-height:1.7;margin-bottom:2rem;font-weight:300}
+.hero-actions{display:flex;gap:0.75rem;flex-wrap:wrap}
+.btn-primary{background:var(--navy);color:var(--white);padding:0.6rem 1.4rem;border-radius:6px;text-decoration:none;font-size:0.88rem;font-weight:500;transition:background 0.2s,transform 0.15s}
+.btn-primary:hover{background:var(--blue);transform:translateY(-1px)}
+.btn-ghost{border:1px solid var(--border);color:var(--muted);padding:0.6rem 1.4rem;border-radius:6px;text-decoration:none;font-size:0.88rem;font-weight:400;transition:border-color 0.2s,color 0.2s}
+.btn-ghost:hover{border-color:var(--sky);color:var(--mid)}
+.hero-social{display:flex;gap:0.6rem;margin-top:1.5rem}
+.social-link{width:36px;height:36px;border-radius:8px;border:1px solid var(--border);display:flex;align-items:center;justify-content:center;color:var(--muted);text-decoration:none;font-size:0.8rem;transition:border-color 0.2s,color 0.2s}
+.social-link:hover{border-color:var(--sky);color:var(--mid)}
+.hero-card{background:var(--white);border:1px solid var(--border);border-radius:14px;padding:1.5rem 1.75rem;min-width:200px;box-shadow:0 4px 24px rgba(26,58,110,0.07)}
+.stat-row{display:flex;flex-direction:column;gap:1rem}
+.stat-item{display:flex;flex-direction:column}
+.stat-num{font-family:var(--serif);font-size:1.9rem;color:var(--navy);line-height:1}
+.stat-lbl{font-size:0.73rem;color:var(--light);letter-spacing:0.05em;margin-top:2px}
+.stat-divider{height:1px;background:var(--border)}
 
-    <link rel='shortcut icon' href='assets/favicon.ico' type='image/x-icon'/ >
-    <link rel = "stylesheet" href= "css/mystyle.css">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  </head>
+/* ABOUT */
+#about{background:var(--white)}
+.about-grid{display:grid;grid-template-columns:1fr 1fr;gap:4rem;align-items:start}
+.about-left{display:flex;flex-direction:column;gap:1.5rem}
+.headshot-wrap{width:100%;aspect-ratio:4/3;border-radius:12px;overflow:hidden;border:1px solid var(--border);background:var(--off);display:flex;align-items:center;justify-content:center}
+/* REPLACE: swap the placeholder div below with:
+   <img src="YOUR_PHOTO.jpg" alt="Anika Bhutani" style="width:100%;height:100%;object-fit:cover"/> */
+.headshot-placeholder{width:100%;height:100%;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:0.5rem;color:var(--light);font-size:0.82rem;min-height:200px}
+.about-text h2{font-family:var(--serif);font-size:1.9rem;color:var(--navy);line-height:1.2;margin-bottom:1rem}
+.about-text p{color:var(--muted);font-size:0.97rem;line-height:1.75;margin-bottom:0.85rem;font-weight:300}
+.interests{display:flex;flex-wrap:wrap;gap:0.5rem;margin-top:1.25rem}
+.tag{background:var(--off);border:1px solid var(--border);color:var(--blue);padding:4px 12px;border-radius:20px;font-size:0.78rem;font-weight:500}
+.about-facts{display:flex;flex-direction:column;gap:1rem}
+.fact-card{background:var(--off);border:1px solid var(--border);border-radius:10px;padding:1rem 1.25rem}
+.fact-card strong{font-size:0.78rem;letter-spacing:0.08em;text-transform:uppercase;color:var(--sky);display:block;margin-bottom:0.3rem;font-weight:500}
+.fact-card span{font-size:0.92rem;color:var(--text)}
 
-  <body>
+/* EXPERIENCE */
+#experience{background:var(--off)}
+#experience h2,#projects h2,#skills h2,#education h2{font-family:var(--serif);font-size:1.9rem;color:var(--navy);margin-bottom:2.5rem}
+.exp-list{display:flex;flex-direction:column}
+.exp-item{display:grid;grid-template-columns:140px 1fr;gap:2rem;padding:2rem 0;border-bottom:1px solid var(--border)}
+.exp-item:last-child{border-bottom:none}
+.exp-date{font-size:0.78rem;color:var(--light);letter-spacing:0.04em;padding-top:0.25rem;line-height:1.5}
+.exp-badge{display:inline-block;background:rgba(37,99,168,0.1);color:var(--mid);border:1px solid rgba(37,99,168,0.2);font-size:0.7rem;padding:2px 8px;border-radius:4px;font-weight:500;letter-spacing:0.04em;margin-bottom:0.5rem}
+.exp-role{font-weight:500;font-size:1rem;color:var(--navy);margin-bottom:0.2rem}
+.exp-company{font-size:0.9rem;color:var(--mid);margin-bottom:0.6rem;font-weight:400}
+.exp-desc{font-size:0.88rem;color:var(--muted);line-height:1.65;font-weight:300}
+.exp-tech{display:flex;flex-wrap:wrap;gap:0.4rem;margin-top:0.75rem}
+.tech-tag{background:var(--white);border:1px solid var(--border);color:var(--blue);font-size:0.72rem;padding:2px 8px;border-radius:4px;font-family:monospace}
 
-    <div class="sidebar profile-sidebar">
-        <a class="logo" href="index.html">
-            <img class="logo-img" src="assets/Logo.png" alt="Logo">
-        </a>
-        <div id="profile">
-            <br><br>
-            <h2>Anika Bhutani</h2>
-          <p>Hey! I'm <b>Anika</b>, a high school sophomore in California with an interest in astrophysics and mathematics. I have a passion for Speech and Debate and advocacy!</p>
-            <br>
-<!--            <a href="projects/about-me.html">More about me ></a>-->
-            </p>
-            <br><br>
-            <div id="social">
-                <ul>
-                    <li><a href="https://www.linkedin.com/in/anika-bhutani/" target="_blank"><img class="social" src="assets/linkedin.png" alt="LinkedIn" id="linkedin-icon"></a></li>
-                    <li><a href="mailto:dr.anikabhutani@gmail.com" target="_blank"><img class="social" src="assets/email.png" alt="Email"></a></li>
-                    <li><a href="https://github.com/anikabhutani" target="_blank"><img class="social" src="assets/github.png" alt="GitHub" id="github-icon"></a></li>
-                </ul>
-            </div>
+/* PROJECTS */
+#projects{background:var(--white)}
+.proj-hint{font-size:0.82rem;color:var(--light);margin-bottom:1.75rem;margin-top:-1.75rem;font-style:italic}
+.projects-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(290px,1fr));gap:1.25rem}
+.proj-card{background:var(--white);border:1px solid var(--border);border-radius:12px;padding:1.5rem;transition:box-shadow 0.2s,transform 0.2s;cursor:pointer;position:relative;overflow:hidden;display:flex;flex-direction:column}
+.proj-card::before{content:'';position:absolute;top:0;left:0;right:0;height:3px;background:linear-gradient(90deg,var(--mid),var(--sky));opacity:0;transition:opacity 0.2s}
+.proj-card:hover{box-shadow:0 8px 28px rgba(26,58,110,0.1);transform:translateY(-2px)}
+.proj-card:hover::before{opacity:1}
+.proj-card-top{display:flex;align-items:flex-start;justify-content:space-between;gap:0.5rem;margin-bottom:0.5rem}
+.proj-award{display:inline-flex;align-items:center;gap:4px;background:#fef9c3;border:1px solid #fde68a;color:#92400e;font-size:0.7rem;padding:2px 8px;border-radius:4px;font-weight:500}
+.proj-github-icon{width:20px;height:20px;flex-shrink:0;color:var(--light);transition:color 0.2s}
+.proj-card:hover .proj-github-icon{color:var(--mid)}
+.proj-title{font-weight:500;font-size:1rem;color:var(--navy);margin-bottom:0.5rem;line-height:1.3}
+.proj-desc{font-size:0.85rem;color:var(--muted);line-height:1.6;margin-bottom:1rem;font-weight:300;flex:1}
+.proj-stack{display:flex;flex-wrap:wrap;gap:0.35rem;margin-bottom:1rem}
+.proj-card-footer{display:flex;align-items:center;justify-content:space-between;margin-top:auto;padding-top:0.75rem;border-top:1px solid var(--border)}
+.proj-open-hint{font-size:0.75rem;color:var(--light);font-style:italic}
+.proj-gh-link{font-size:0.78rem;color:var(--mid);text-decoration:none;display:flex;align-items:center;gap:4px;font-weight:500;border:1px solid var(--border);padding:3px 10px;border-radius:4px;transition:border-color 0.2s,background 0.2s;background:var(--white)}
+.proj-gh-link:hover{border-color:var(--sky);background:var(--off)}
+
+/* PROJECT MODAL */
+.modal-overlay{position:fixed;inset:0;background:rgba(10,22,40,0.55);z-index:200;display:flex;align-items:center;justify-content:center;padding:1.5rem;opacity:0;pointer-events:none;transition:opacity 0.2s}
+.modal-overlay.open{opacity:1;pointer-events:all}
+.modal{background:var(--white);border-radius:16px;border:1px solid var(--border);width:100%;max-width:700px;max-height:88vh;overflow-y:auto;box-shadow:0 24px 64px rgba(10,22,40,0.18);transform:translateY(16px) scale(0.98);transition:transform 0.25s}
+.modal-overlay.open .modal{transform:translateY(0) scale(1)}
+.modal-header{padding:1.75rem 2rem 1.25rem;border-bottom:1px solid var(--border);position:sticky;top:0;background:var(--white);z-index:2;border-radius:16px 16px 0 0}
+.modal-header-top{display:flex;align-items:flex-start;justify-content:space-between;gap:1rem}
+.modal-title{font-family:var(--serif);font-size:1.5rem;color:var(--navy);line-height:1.2}
+.modal-close{background:none;border:1px solid var(--border);border-radius:6px;width:32px;height:32px;display:flex;align-items:center;justify-content:center;cursor:pointer;color:var(--muted);font-size:1.1rem;flex-shrink:0;transition:border-color 0.2s,color 0.2s}
+.modal-close:hover{border-color:var(--sky);color:var(--mid)}
+.modal-meta{display:flex;flex-wrap:wrap;gap:0.5rem;margin-top:0.75rem;align-items:center}
+.modal-body{padding:1.75rem 2rem}
+.modal-section{margin-bottom:1.75rem}
+.modal-section:last-child{margin-bottom:0}
+.modal-section-label{font-size:0.72rem;letter-spacing:0.12em;text-transform:uppercase;color:var(--sky);font-weight:500;margin-bottom:0.6rem}
+.modal-section p{font-size:0.93rem;color:var(--muted);line-height:1.75;font-weight:300;margin-bottom:0.6rem}
+.modal-section ul{padding-left:1.25rem;display:flex;flex-direction:column;gap:0.4rem}
+.modal-section ul li{font-size:0.93rem;color:var(--muted);line-height:1.6;font-weight:300}
+/* Placeholder zones — replace with real content when ready */
+.modal-image-placeholder{width:100%;background:var(--off);border:1.5px dashed var(--border);border-radius:10px;display:flex;flex-direction:column;align-items:center;justify-content:center;padding:2rem;color:var(--light);font-size:0.82rem;font-style:italic;margin-bottom:1rem;min-height:160px;text-align:center;gap:0.5rem}
+.modal-code-placeholder{width:100%;background:#f8fafc;border:1px solid var(--border);border-radius:10px;padding:1.25rem;color:var(--muted);font-size:0.8rem;font-family:monospace;line-height:1.6;white-space:pre-wrap;overflow-x:auto}
+.modal-links{display:flex;gap:0.75rem;flex-wrap:wrap;margin-top:0.25rem}
+.modal-link-btn{display:flex;align-items:center;gap:6px;padding:0.5rem 1.1rem;border-radius:6px;font-size:0.85rem;font-weight:500;text-decoration:none;border:1px solid var(--border);color:var(--mid);background:var(--off);transition:border-color 0.2s,background 0.2s}
+.modal-link-btn:hover{border-color:var(--sky);background:var(--pale)}
+.modal-link-btn.primary{background:var(--navy);color:var(--white);border-color:var(--navy)}
+.modal-link-btn.primary:hover{background:var(--blue)}
+
+/* SKILLS */
+#skills{background:var(--off)}
+.skills-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(200px,1fr));gap:1.25rem}
+.skill-group{background:var(--white);border:1px solid var(--border);border-radius:10px;padding:1.25rem}
+.skill-group-title{font-size:0.75rem;letter-spacing:0.1em;text-transform:uppercase;color:var(--sky);font-weight:500;margin-bottom:0.75rem}
+.skill-items{display:flex;flex-direction:column;gap:0.35rem}
+.skill-item{font-size:0.85rem;color:var(--text);font-weight:400;padding:2px 0}
+
+/* EDUCATION */
+#education{background:var(--white)}
+.edu-card{background:linear-gradient(135deg,#f0f5ff,#e8effc);border:1px solid var(--border);border-radius:14px;padding:2rem}
+.edu-school{font-weight:500;font-size:1.1rem;color:var(--navy);margin-bottom:0.25rem}
+.edu-degree{font-size:0.9rem;color:var(--mid);margin-bottom:0.6rem}
+.edu-courses{font-size:0.82rem;color:var(--muted);line-height:1.6;font-weight:300}
+
+/* CONTACT */
+#contact{background:var(--navy);color:var(--white)}
+#contact .section-label{color:var(--accent)}
+#contact h2{font-family:var(--serif);font-size:2rem;color:var(--white);margin-bottom:0.75rem}
+#contact p{color:rgba(255,255,255,0.6);font-size:0.97rem;max-width:420px;font-weight:300;margin-bottom:2rem}
+.contact-links{display:flex;gap:1rem;flex-wrap:wrap}
+.contact-link{display:flex;align-items:center;gap:8px;padding:0.6rem 1.2rem;border-radius:7px;border:1px solid rgba(255,255,255,0.15);color:rgba(255,255,255,0.85);text-decoration:none;font-size:0.88rem;font-weight:400;transition:border-color 0.2s,background 0.2s}
+.contact-link:hover{border-color:rgba(255,255,255,0.4);background:rgba(255,255,255,0.05)}
+
+footer{background:var(--navy);border-top:1px solid rgba(255,255,255,0.07);padding:1.25rem 2rem;text-align:center}
+footer p{font-size:0.78rem;color:rgba(255,255,255,0.25)}
+
+@media(max-width:680px){
+  .hero-inner{grid-template-columns:1fr}.hero-card{display:none}
+  .about-grid{grid-template-columns:1fr}.exp-item{grid-template-columns:1fr}.exp-date{padding:0}
+}
+</style>
+</head>
+<body>
+
+<nav>
+  <div class="nav-inner">
+    <a href="#hero" class="nav-logo">Anika Bhutani</a>
+    <ul class="nav-links">
+      <li><a href="#about">About</a></li>
+      <li><a href="#experience">Experience</a></li>
+      <li><a href="#projects">Projects</a></li>
+      <li><a href="#skills">Skills</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+  </div>
+</nav>
+
+<!-- ═══════════════════════════════════ HERO ═══════════════════════════════════ -->
+<section id="hero">
+  <div class="hero-inner">
+    <div>
+      <div class="hero-tag"><span class="dot"></span> Available for Summer 2026</div>
+      <h1>Building things<br>that <em>actually</em><br>matter.</h1>
+      <p class="hero-sub">I'm Anika — a student studying Electrical Engineering and Computer Science at UC Berkeley. I work at the intersection of machine learning, full-stack development, and data science.</p>
+      <div class="hero-actions">
+        <a href="#projects" class="btn-primary">View my work</a>
+        <a href="mailto:abhutani@berkeley.edu" class="btn-ghost">Get in touch</a>
+      </div>
+      <div class="hero-social">
+        <a href="https://linkedin.com/in/anika-bhutani/" class="social-link" title="LinkedIn">in</a>
+        <a href="https://github.com/anikabhutani" class="social-link" title="GitHub">gh</a>
+        <a href="mailto:abhutani@berkeley.edu" class="social-link" title="Email">@</a>
+      </div>
+    </div>
+    <div class="hero-card">
+      <div class="stat-row">
+        <div class="stat-item">
+          <span class="stat-num">2+</span>
+          <span class="stat-lbl">Active internships</span>
         </div>
-        <progress value="0"></progress>
+        <div class="stat-divider"></div>
+        <div class="stat-item">
+          <span class="stat-num">5+</span>
+          <span class="stat-lbl">Hackathon placements</span>
+        </div>
+        <div class="stat-divider"></div>
+        <div class="stat-item">
+          <span class="stat-num">8+</span>
+          <span class="stat-lbl">Projects shipped</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════════════════════════ ABOUT ══════════════════════════════════ -->
+<section id="about">
+  <div class="container">
+    <div class="about-grid">
+      <div class="about-left">
+        <!--
+          HEADSHOT: Replace this entire .headshot-wrap div with:
+          <img src="your-photo.jpg" alt="Anika Bhutani"
+               style="width:100%;border-radius:12px;border:1px solid var(--border);object-fit:cover"/>
+        -->
+        <div class="headshot-wrap">
+          <div class="headshot-placeholder">
+            <img src="assets/anika_headshot.jpeg" alt="Your Name" style="width:100%; height:100%; object-fit:cover; border-radius:50%;">
+          </div>
+        </div>
+        <div class="about-facts">
+          <div class="fact-card">
+            <strong>Currently at</strong>
+            <span>UC Berkeley — B.S. Electrical Engineering and Computer Science, Expected 2028</span>
+          </div>
+          <div class="fact-card">
+            <strong>Based in</strong>
+            <span>Bay Area, California</span>
+          </div>
+          <div class="fact-card">
+            <strong>Recognition</strong>
+            <span>National Merit Finalist · Non-Trivial Fellow · Outstanding Achievement in Math &amp; English</span>
+          </div>
+          <div class="fact-card">
+            <strong>Community</strong>
+            <span>Project Manager, Business &amp; Software at Berkeley · Data Developer, The Daily Californian · Logistics, Asha</span>
+          </div>
+        </div>
+      </div>
+      <div class="about-text">
+        <div class="section-label">About me</div>
+        <h2>Engineer, researcher,<br>and builder.</h2>
+        <p>I'm a rising sophomore at UC Berkeley studying Engineering, with a deep focus on machine learning, data science, and full-stack development. I'm drawn to problems where code and data can create real-world impact — from clinical decision support to energy equity modeling.</p>
+        <p>Currently, I'm contracting as a Software Engineer at Luel AI and interning as an AI/ML Engineer at Outsampler, working on reinforcement learning for code generation. Previously, I spent a summer doing data science research at Stanford.</p>
+        <p>Outside of engineering, I'm a Project Manager at Business &amp; Software at Berkeley, a data developer at The Daily Californian, and involved in advocacy work with Asha. I'm also a former Speech &amp; Debate captain and National Merit Finalist.</p>
+        <div class="interests">
+          <span class="tag">Machine Learning</span>
+          <span class="tag">Full-Stack</span>
+          <span class="tag">Data Science</span>
+          <span class="tag">Reinforcement Learning</span>
+          <span class="tag">Spatial Transcriptomics</span>
+          <span class="tag">UI/UX</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ════════════════════════════════ EXPERIENCE ════════════════════════════════ -->
+<section id="experience">
+  <div class="container">
+    <div class="section-label">Work</div>
+    <h2>Experience</h2>
+    <div class="exp-list">
+
+      <div class="exp-item">
+        <div class="exp-date">Feb 2026 –<br>Present</div>
+        <div>
+          <span class="exp-badge">CONTRACT</span>
+          <div class="exp-role">Software Engineer</div>
+          <div class="exp-company">Luel AI · Berkeley, CA</div>
+          <div class="exp-desc">Built an end-to-end PDF signing flow covering upload, preview, signature embedding via pdf-lib, and download, with robust validation and error handling. Proposed an AI-based duplicate and invalid submission detection system for the training data pipeline and delivered an SWE consulting plan for data screening.</div>
+          <div class="exp-tech"><span class="tech-tag">React</span><span class="tech-tag">Next.js</span><span class="tech-tag">pdf-lib</span></div>
+        </div>
+      </div>
+
+      <div class="exp-item">
+        <div class="exp-date">Jan 2026 –<br>Present</div>
+        <div>
+          <span class="exp-badge">INTERNSHIP</span>
+          <div class="exp-role">AI/ML Engineer Intern</div>
+          <div class="exp-company">Outsampler · Remote</div>
+          <div class="exp-desc">Implemented reinforcement learning for the Qwen2.5-Coder-3B model using Group Relative Policy Optimization (GRPO) on the BIRD-SQL dataset. Used custom reward functions and policy updates to optimize SQL generation accuracy and enforce strict format compliance.</div>
+          <div class="exp-tech"><span class="tech-tag">Python</span><span class="tech-tag">PyTorch</span><span class="tech-tag">GCP</span><span class="tech-tag">CUDA</span><span class="tech-tag">RL / GRPO</span></div>
+        </div>
+      </div>
+
+      <div class="exp-item">
+        <div class="exp-date">Jun – Aug 2025</div>
+        <div>
+          <span class="exp-badge">INTERNSHIP</span>
+          <div class="exp-role">Data Science Intern (Consulting)</div>
+          <div class="exp-company">PharmaACE · Remote</div>
+          <div class="exp-desc">Developed a cancer risk prediction model using Random Forests, achieving 95% accuracy. Engineered a physician referral network from patient-level data using graph-based relationship modeling to analyze connectivity patterns.</div>
+          <div class="exp-tech"><span class="tech-tag">Python</span><span class="tech-tag">Scikit-Learn</span><span class="tech-tag">Pandas</span><span class="tech-tag">Random Forest</span><span class="tech-tag">Graph Modeling</span></div>
+        </div>
+      </div>
+
+      <div class="exp-item">
+        <div class="exp-date">May – Oct 2024</div>
+        <div>
+          <span class="exp-badge">RESEARCH</span>
+          <div class="exp-role">Data Science Research Intern</div>
+          <div class="exp-company">Stanford University · Palo Alto, CA</div>
+          <div class="exp-desc">Led a spatial transcriptomics pilot and built end-to-end analysis pipelines in Python and R to analyze high-dimensional gene expression data. Automated fully manual microscopic image analysis by developing custom Java macros, reducing per-image processing time by ~83%.</div>
+          <div class="exp-tech"><span class="tech-tag">Python</span><span class="tech-tag">R</span><span class="tech-tag">SQL</span><span class="tech-tag">Java</span><span class="tech-tag">Spatial Transcriptomics</span></div>
+        </div>
+      </div>
 
     </div>
+  </div>
+</section>
 
+<!-- ══════════════════════════════════ PROJECTS ════════════════════════════════ -->
+<section id="projects">
+  <div class="container">
+    <div class="section-label">Work</div>
+    <h2>Projects</h2>
+    <p class="proj-hint">Click any card for a deeper look.</p>
+    <div class="projects-grid">
 
-    <div id="works">
-
-        <div id="home-space"></div>
-            <img id="me" class="illustration" src="assets/me.png" alt="Designer" data-toggle="tooltip" title="I'm a builder">
-
-            <img id="data" class="illustration" src="assets/data.png" alt="science" data-toggle="tooltip" title="a researcher">
-
-            <img id="pingpong" class="illustration" src="assets/advocacy.png" alt="Advocacy" data-toggle="tooltip" title="an advocate">
-
-            <img id="code" class="illustration" src="assets/books.png" alt="Reader" data-toggle="tooltip" title="a reader">
-
-            <img id="world" class="illustration" src="assets/world.png" alt="World explorer" data-toggle="tooltip" title="an explorer">
-
-
-        <div class='project'>
-        <hr>
-<!--            <h3>More Projects to Come...</h3>-->
-            <p>Thanks for stopping by! Feel free to send me an <a href="mailto:dr.anikabhutani@gmail.com">email</a>.</p>
-
+      <div class="proj-card" onclick="openModal('smartclinical')">
+        <div class="proj-card-top">
+          <span class="proj-award">🥈 2nd · UC Berkeley Datathon</span>
+          <svg class="proj-github-icon" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C6.477 2 2 6.477 2 12c0 4.418 2.865 8.166 6.839 9.489.5.092.682-.217.682-.482 0-.237-.009-.868-.013-1.703-2.782.604-3.369-1.34-3.369-1.34-.454-1.156-1.11-1.462-1.11-1.462-.908-.62.069-.608.069-.608 1.003.07 1.531 1.03 1.531 1.03.892 1.529 2.341 1.087 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.11-4.555-4.943 0-1.091.39-1.984 1.029-2.683-.103-.253-.446-1.27.098-2.647 0 0 .84-.269 2.75 1.025A9.578 9.578 0 0112 6.836a9.59 9.59 0 012.504.337c1.909-1.294 2.747-1.025 2.747-1.025.546 1.377.202 2.394.1 2.647.64.699 1.028 1.592 1.028 2.683 0 3.842-2.339 4.687-4.566 4.935.359.309.678.919.678 1.852 0 1.336-.012 2.415-.012 2.741 0 .267.18.578.688.48C19.138 20.163 22 16.418 22 12c0-5.523-4.477-10-10-10z"/></svg>
         </div>
+        <div class="proj-title">Smart Clinical</div>
+        <div class="proj-desc">Hospital resource allocation app integrating a Random Forest risk prediction model to optimize patient care prioritization. Full-stack interface with Streamlit and JavaScript, external API integrations.</div>
+        <div class="proj-stack"><span class="tech-tag">Python</span><span class="tech-tag">Streamlit</span><span class="tech-tag">JS</span><span class="tech-tag">Tableau</span><span class="tech-tag">Random Forest</span></div>
+        <div class="proj-card-footer">
+          <span class="proj-open-hint">Click to read more</span>
+          <a href="https://github.com/anikabhutani/datathon2025" class="proj-gh-link" onclick="event.stopPropagation()">↗ GitHub</a>
+        </div>
+      </div>
 
+      <div class="proj-card" onclick="openModal('acoustic')">
+        <div class="proj-card-top">
+          <span style="visibility:hidden" class="proj-award">placeholder</span>
+          <svg class="proj-github-icon" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C6.477 2 2 6.477 2 12c0 4.418 2.865 8.166 6.839 9.489.5.092.682-.217.682-.482 0-.237-.009-.868-.013-1.703-2.782.604-3.369-1.34-3.369-1.34-.454-1.156-1.11-1.462-1.11-1.462-.908-.62.069-.608.069-.608 1.003.07 1.531 1.03 1.531 1.03.892 1.529 2.341 1.087 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.11-4.555-4.943 0-1.091.39-1.984 1.029-2.683-.103-.253-.446-1.27.098-2.647 0 0 .84-.269 2.75 1.025A9.578 9.578 0 0112 6.836a9.59 9.59 0 012.504.337c1.909-1.294 2.747-1.025 2.747-1.025.546 1.377.202 2.394.1 2.647.64.699 1.028 1.592 1.028 2.683 0 3.842-2.339 4.687-4.566 4.935.359.309.678.919.678 1.852 0 1.336-.012 2.415-.012 2.741 0 .267.18.578.688.48C19.138 20.163 22 16.418 22 12c0-5.523-4.477-10-10-10z"/></svg>
+        </div>
+        <div class="proj-title">Kinkade Theater Acoustic Model</div>
+        <div class="proj-desc">3D FDTD acoustic simulation modeling wave propagation and boundary reflections in a physics-based theater. Used SciPy differential evolution to optimize placement of 20 diffusers for uniform acoustics.</div>
+        <div class="proj-stack"><span class="tech-tag">Python</span><span class="tech-tag">SciPy</span><span class="tech-tag">FDTD</span></div>
+        <div class="proj-card-footer">
+          <span class="proj-open-hint">Click to read more</span>
+          <a href="https://github.com/anikabhutani/acousticdiffusionmodeling" class="proj-gh-link" onclick="event.stopPropagation()">↗ GitHub</a>
+        </div>
+      </div>
 
-<
-        <footer>© Anika Bhutani 2023</footer>
+      <div class="proj-card" onclick="openModal('energy')">
+        <div class="proj-card-top">
+          <span style="visibility:hidden" class="proj-award">placeholder</span>
+          <svg class="proj-github-icon" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C6.477 2 2 6.477 2 12c0 4.418 2.865 8.166 6.839 9.489.5.092.682-.217.682-.482 0-.237-.009-.868-.013-1.703-2.782.604-3.369-1.34-3.369-1.34-.454-1.156-1.11-1.462-1.11-1.462-.908-.62.069-.608.069-.608 1.003.07 1.531 1.03 1.531 1.03.892 1.529 2.341 1.087 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.11-4.555-4.943 0-1.091.39-1.984 1.029-2.683-.103-.253-.446-1.27.098-2.647 0 0 .84-.269 2.75 1.025A9.578 9.578 0 0112 6.836a9.59 9.59 0 012.504.337c1.909-1.294 2.747-1.025 2.747-1.025.546 1.377.202 2.394.1 2.647.64.699 1.028 1.592 1.028 2.683 0 3.842-2.339 4.687-4.566 4.935.359.309.678.919.678 1.852 0 1.336-.012 2.415-.012 2.741 0 .267.18.578.688.48C19.138 20.163 22 16.418 22 12c0-5.523-4.477-10-10-10z"/></svg>
+        </div>
+        <div class="proj-title">Energy Equity Model</div>
+        <div class="proj-desc">ML model predicting regional solar energy potential in underserved areas. Scraped demographic, economic, and irradiance datasets; feature engineering in Pandas. R² of 0.92.</div>
+        <div class="proj-stack"><span class="tech-tag">Python</span><span class="tech-tag">Pandas</span><span class="tech-tag">Decision Trees</span></div>
+        <div class="proj-card-footer">
+          <span class="proj-open-hint">Click to read more</span>
+          <a href="https://github.com/anikabhutani/energyequity" class="proj-gh-link" onclick="event.stopPropagation()">↗ GitHub</a>
+        </div>
+      </div>
+
+      <div class="proj-card" onclick="openModal('justice')">
+        <div class="proj-card-top">
+          <span class="proj-award">🥈 2nd/600 · Western Digital Hackathon</span>
+          <svg class="proj-github-icon" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C6.477 2 2 6.477 2 12c0 4.418 2.865 8.166 6.839 9.489.5.092.682-.217.682-.482 0-.237-.009-.868-.013-1.703-2.782.604-3.369-1.34-3.369-1.34-.454-1.156-1.11-1.462-1.11-1.462-.908-.62.069-.608.069-.608 1.003.07 1.531 1.03 1.531 1.03.892 1.529 2.341 1.087 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.11-4.555-4.943 0-1.091.39-1.984 1.029-2.683-.103-.253-.446-1.27.098-2.647 0 0 .84-.269 2.75 1.025A9.578 9.578 0 0112 6.836a9.59 9.59 0 012.504.337c1.909-1.294 2.747-1.025 2.747-1.025.546 1.377.202 2.394.1 2.647.64.699 1.028 1.592 1.028 2.683 0 3.842-2.339 4.687-4.566 4.935.359.309.678.919.678 1.852 0 1.336-.012 2.415-.012 2.741 0 .267.18.578.688.48C19.138 20.163 22 16.418 22 12c0-5.523-4.477-10-10-10z"/></svg>
+        </div>
+        <div class="proj-title">Justice Junction</div>
+        <div class="proj-desc">Full-stack web application delivering real-time social issue data and dynamic content updates. Placed 2nd out of 600 teams at the Western Digital Hackathon.</div>
+        <div class="proj-stack"><span class="tech-tag">Java</span><span class="tech-tag">CSS</span></div>
+        <div class="proj-card-footer">
+          <span class="proj-open-hint">Click to read more</span>
+          <span style="font-size:0.75rem;color:var(--light);font-style:italic">GitHub coming soon</span>
+        </div>
+      </div>
+
+      <div class="proj-card" onclick="openModal('pneumonia')">
+        <div class="proj-card-top">
+          <span style="visibility:hidden" class="proj-award">placeholder</span>
+          <svg class="proj-github-icon" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C6.477 2 2 6.477 2 12c0 4.418 2.865 8.166 6.839 9.489.5.092.682-.217.682-.482 0-.237-.009-.868-.013-1.703-2.782.604-3.369-1.34-3.369-1.34-.454-1.156-1.11-1.462-1.11-1.462-.908-.62.069-.608.069-.608 1.003.07 1.531 1.03 1.531 1.03.892 1.529 2.341 1.087 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.11-4.555-4.943 0-1.091.39-1.984 1.029-2.683-.103-.253-.446-1.27.098-2.647 0 0 .84-.269 2.75 1.025A9.578 9.578 0 0112 6.836a9.59 9.59 0 012.504.337c1.909-1.294 2.747-1.025 2.747-1.025.546 1.377.202 2.394.1 2.647.64.699 1.028 1.592 1.028 2.683 0 3.842-2.339 4.687-4.566 4.935.359.309.678.919.678 1.852 0 1.336-.012 2.415-.012 2.741 0 .267.18.578.688.48C19.138 20.163 22 16.418 22 12c0-5.523-4.477-10-10-10z"/></svg>
+        </div>
+        <div class="proj-title">Pneumonia Detection</div>
+        <div class="proj-desc">KNN and CNN architectures for pneumonia classification on chest X-ray images. Data augmentation and hyperparameter tuning for improved generalization — 86% test accuracy with CNN.</div>
+        <div class="proj-stack"><span class="tech-tag">Python</span><span class="tech-tag">Scikit-Learn</span><span class="tech-tag">CNN</span><span class="tech-tag">KNN</span></div>
+        <div class="proj-card-footer">
+          <span class="proj-open-hint">Click to read more</span>
+          <span style="font-size:0.75rem;color:var(--light);font-style:italic">GitHub coming soon</span>
+        </div>
+      </div>
+
+      <div class="proj-card" onclick="openModal('teentask')">
+        <div class="proj-card-top">
+          <span class="proj-award">🥉 3rd/100 · BYU PitchFest ($1K)</span>
+          <svg class="proj-github-icon" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C6.477 2 2 6.477 2 12c0 4.418 2.865 8.166 6.839 9.489.5.092.682-.217.682-.482 0-.237-.009-.868-.013-1.703-2.782.604-3.369-1.34-3.369-1.34-.454-1.156-1.11-1.462-1.11-1.462-.908-.62.069-.608.069-.608 1.003.07 1.531 1.03 1.531 1.03.892 1.529 2.341 1.087 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.11-4.555-4.943 0-1.091.39-1.984 1.029-2.683-.103-.253-.446-1.27.098-2.647 0 0 .84-.269 2.75 1.025A9.578 9.578 0 0112 6.836a9.59 9.59 0 012.504.337c1.909-1.294 2.747-1.025 2.747-1.025.546 1.377.202 2.394.1 2.647.64.699 1.028 1.592 1.028 2.683 0 3.842-2.339 4.687-4.566 4.935.359.309.678.919.678 1.852 0 1.336-.012 2.415-.012 2.741 0 .267.18.578.688.48C19.138 20.163 22 16.418 22 12c0-5.523-4.477-10-10-10z"/></svg>
+        </div>
+        <div class="proj-title">TeenTaskForce</div>
+        <div class="proj-desc">Uber-style marketplace prototype connecting households with teenage workers. Revenue model and market strategy. 1st/8 at Coder Central Incubator ($500) and 3rd/100 at BYU PitchFest ($1K).</div>
+        <div class="proj-stack"><span class="tech-tag">Figma</span><span class="tech-tag">UI/UX</span></div>
+        <div class="proj-card-footer">
+          <span class="proj-open-hint">Click to read more</span>
+          <span style="font-size:0.75rem;color:var(--light);font-style:italic">GitHub coming soon</span>
+        </div>
+      </div>
+
     </div>
+  </div>
+</section>
 
+<!-- ════════════════════════════════ PROJECT MODAL ═════════════════════════════ -->
+<div class="modal-overlay" id="modal-overlay" onclick="handleOverlayClick(event)">
+  <div class="modal" id="modal-box">
+    <div class="modal-header">
+      <div class="modal-header-top">
+        <div class="modal-title" id="modal-title">Project</div>
+        <button class="modal-close" onclick="closeModal()" aria-label="Close">✕</button>
+      </div>
+      <div class="modal-meta" id="modal-meta"></div>
+    </div>
+    <div class="modal-body" id="modal-body"></div>
+  </div>
+</div>
 
+<!-- ════════════════════════════════════ SKILLS ═══════════════════════════════ -->
+<section id="skills">
+  <div class="container">
+    <div class="section-label">Toolbox</div>
+    <h2>Skills</h2>
+    <div class="skills-grid">
+      <div class="skill-group">
+        <div class="skill-group-title">Languages</div>
+        <div class="skill-items">
+          <span class="skill-item">Python</span><span class="skill-item">Java</span>
+          <span class="skill-item">SQL</span><span class="skill-item">JavaScript</span>
+          <span class="skill-item">HTML / CSS</span><span class="skill-item">Scheme</span>
+        </div>
+      </div>
+      <div class="skill-group">
+        <div class="skill-group-title">Frameworks &amp; Libraries</div>
+        <div class="skill-items">
+          <span class="skill-item">React · Next.js</span><span class="skill-item">NumPy · Pandas</span>
+          <span class="skill-item">Scikit-Learn</span><span class="skill-item">PyTorch</span>
+          <span class="skill-item">Matplotlib · Seaborn</span><span class="skill-item">Streamlit</span>
+        </div>
+      </div>
+      <div class="skill-group">
+        <div class="skill-group-title">Tools &amp; Platforms</div>
+        <div class="skill-items">
+          <span class="skill-item">Git / GitHub</span><span class="skill-item">GCP · CUDA</span>
+          <span class="skill-item">Jupyter Notebook</span><span class="skill-item">Tableau · Figma</span>
+          <span class="skill-item">VS Code · IntelliJ</span><span class="skill-item">ImageJ</span>
+        </div>
+      </div>
+      <div class="skill-group">
+        <div class="skill-group-title">Concepts</div>
+        <div class="skill-items">
+          <span class="skill-item">ML — regression, trees, CNNs</span>
+          <span class="skill-item">Reinforcement Learning (GRPO)</span>
+          <span class="skill-item">LLMs / Small Language Models</span>
+          <span class="skill-item">Exploratory Data Analysis</span>
+          <span class="skill-item">Full-Stack Development</span>
+          <span class="skill-item">Prompt Engineering</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
 
-<!--JS-->
-    <script src ="js/myscript.js"></script>
-    <!--Typed-->
-    <script src="js/typed.js"></script>
+<!-- ══════════════════════════════════ EDUCATION ══════════════════════════════ -->
+<section id="education">
+  <div class="container">
+    <div class="section-label">Background</div>
+    <h2>Education</h2>
+    <div class="edu-card">
+      <div class="edu-school">University of California, Berkeley</div>
+      <div class="edu-degree">B.S. Engineering · Expected May 2028</div>
+      <div class="edu-courses">Relevant coursework: Structure and Interpretation of Computer Programs (SICP) · Data Structures &amp; Algorithms · Linear Algebra &amp; Differential Equations · Foundations; Principles and Techniques of Data Science</div>
+    </div>
+  </div>
+</section>
 
-    <script type="text/javascript" src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-<!--Google Analytics-->
-    <script>
-      (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
-      (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
-      m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-      })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+<!-- ══════════════════════════════════ CONTACT ════════════════════════════════ -->
+<section id="contact">
+  <div class="container">
+    <div class="section-label">Let's connect</div>
+    <h2>Get in touch.</h2>
+    <p>Open to internship opportunities, research collaborations, and interesting projects. My inbox is always open.</p>
+    <div class="contact-links">
+      <a href="mailto:abhutani@berkeley.edu" class="contact-link">✉ abhutani@berkeley.edu</a>
+      <a href="https://linkedin.com/in/anika-bhutani/" class="contact-link">LinkedIn</a>
+      <a href="https://github.com/anikabhutani" class="contact-link">GitHub</a>
+    </div>
+  </div>
+</section>
 
-      ga('create', 'UA-91244637-1', 'auto');
-      ga('send', 'pageview');
+<footer>
+  <p>© 2026 Anika Bhutani · Built with intention.</p>
+</footer>
 
-    </script>
+<!-- ════════════════════════════════════ JS ═══════════════════════════════════ -->
+<script>
+/*
+  PROJECT DATA
+  ─────────────────────────────────────────────────────────────────────────────
+  Fill in the TODO sections below with your own descriptions, bullet points,
+  screenshots, and code snippets. Each project object has:
 
+    title    — display name (already filled)
+    award    — badge text, or null
+    stack    — array of tech-tag strings (already filled)
+    github   — URL string, or null
+    overview — 2–3 sentence paragraph describing the problem and your role
+    details  — array of bullet-point strings (key technical achievements)
+    image    — relative path to a screenshot, e.g. "img/smartclinical.png",
+               or null to show the dashed placeholder
+    imageAlt — alt text for the image
+    snippet  — a short code string to display in the code block, or null
+*/
+const PROJECTS = {
+  smartclinical: {
+    title: "Smart Clinical",
+    award: "🥈 2nd Place · UC Berkeley Datathon for Social Good",
+    stack: ["Python","Streamlit","JavaScript","HTML","Tableau","Random Forest","Decision Trees","API Integration"],
+    github: "https://github.com/anikabhutani/datathon2025",
+    // ─── TODO: fill these in ───
+    overview: "TODO: 2–3 sentences on the problem you were solving and your role. E.g. \"Emergency departments face chronic resource shortages. Smart Clinical predicts patient acuity from vitals and automatically recommends ICU vs. general ward allocation, cutting manual triage time.\"",
+    details: [
+      "TODO: Key technical detail — e.g. \"Trained a Random Forest on 10k+ patient records; feature importance guided by domain expert input\"",
+      "TODO: e.g. \"Streamlit front-end queries a Flask micro-API; results rendered live in a Tableau-embedded dashboard\"",
+      "TODO: e.g. \"Placed 2nd out of all competing teams; judges praised the explainability layer built on top of the model\""
+    ],
+    image: null, // e.g. "img/smartclinical-demo.png"
+    imageAlt: "Smart Clinical app screenshot",
+    snippet: null
+    // snippet example:
+    // snippet: `clf = RandomForestClassifier(n_estimators=200, max_depth=8)\nclf.fit(X_train, y_train)\nprint(f"Val accuracy: {clf.score(X_val, y_val):.3f}")`
+  },
 
+  acoustic: {
+    title: "Kinkade Theater Acoustic Model",
+    award: null,
+    stack: ["Python","SciPy","FDTD","Differential Evolution","Physics Simulation"],
+    github: "https://github.com/anikabhutani/acousticdiffusionmodeling",
+    overview: "TODO: Describe the motivation — why model theater acoustics computationally? What was the Kinkade, and what acoustic problem needed solving?",
+    details: [
+      "TODO: e.g. \"Discretized a 3D theater geometry into a uniform grid; applied FDTD update equations at each time step\"",
+      "TODO: e.g. \"Optimized 20 diffuser positions using SciPy's differential evolution; objective = minimizing sound pressure variance across audience seats\"",
+      "TODO: e.g. \"Reduced simulated pressure variance by X% compared to the baseline (no diffusers) configuration\""
+    ],
+    image: null,
+    imageAlt: "Theater acoustic simulation visualization",
+    snippet: null
+  },
 
+  energy: {
+    title: "Energy Equity Model",
+    award: null,
+    stack: ["Python","Pandas","Scikit-Learn","Decision Trees","Regression","Web Scraping"],
+    github: "https://github.com/anikabhutani/energyequity",
+    overview: "TODO: Describe the equity angle — which communities were underserved, and what datasets did you combine to quantify solar potential?",
+    details: [
+      "TODO: e.g. \"Scraped Census demographic data, EIA irradiance datasets, and county-level economic indicators; merged on FIPS codes\"",
+      "TODO: e.g. \"Engineered 15+ features including poverty rate, rooftop area proxy, and seasonal irradiance variability\"",
+      "TODO: e.g. \"Regression model achieved R² = 0.92 on held-out counties; flagged 40+ high-potential / low-adoption regions\""
+    ],
+    image: null,
+    imageAlt: "Energy equity model map",
+    snippet: null
+  },
 
-  </body>
+  justice: {
+    title: "Justice Junction",
+    award: "🥈 2nd/600 · Western Digital Hackathon",
+    stack: ["Java","CSS","Full-Stack","Real-Time Data"],
+    github: null,
+    overview: "TODO: Describe the social issue this addressed and what the app actually showed users. E.g. \"Justice Junction aggregates real-time data on police incidents, legislative updates, and community resources, surfacing local action items for users based on their ZIP code.\"",
+    details: [
+      "TODO: e.g. \"Built a Java servlet back-end that polls three public APIs; front-end renders live feeds without page reload\"",
+      "TODO: e.g. \"Designed a card-based UI in vanilla CSS that adapts to mobile; keyboard-accessible throughout\"",
+      "TODO: e.g. \"Placed 2nd out of 600 teams; judges highlighted the data freshness and actionability of the UI\""
+    ],
+    image: null,
+    imageAlt: "Justice Junction screenshot",
+    snippet: null
+  },
+
+  pneumonia: {
+    title: "Pneumonia Detection",
+    award: null,
+    stack: ["Python","Scikit-Learn","TensorFlow / Keras","CNN","KNN","Image Processing"],
+    github: null,
+    overview: "TODO: Describe the dataset (Kaggle chest X-ray?), your motivation, and the two-model comparison approach you took.",
+    details: [
+      "TODO: e.g. \"Preprocessed 5,863 chest X-rays: resized to 128×128, normalized pixel values, horizontal flip augmentation\"",
+      "TODO: e.g. \"KNN baseline achieved 74% accuracy; custom 4-layer CNN with batch norm reached 86% on the held-out test set\"",
+      "TODO: e.g. \"Applied Grad-CAM to visualize regions the CNN attended to — confirmed alignment with radiologist annotations\""
+    ],
+    image: null,
+    imageAlt: "Pneumonia detection model results",
+    snippet: null
+  },
+
+  teentask: {
+    title: "TeenTaskForce",
+    award: "🥉 3rd/100 · BYU PitchFest ($1,000)",
+    stack: ["Figma","UI/UX","Business Strategy","Pitch"],
+    github: null,
+    overview: "TODO: Describe the marketplace concept and what gap in the market you identified. E.g. \"TeenTaskForce is an Uber-style app connecting households needing odd-jobs with vetted teenagers who want flexible income — addressing both youth unemployment and neighbor trust gaps.\"",
+    details: [
+      "TODO: e.g. \"Designed 30+ Figma screens covering onboarding, task posting, matching, and payment flows; prototype was fully interactive\"",
+      "TODO: e.g. \"Built a tiered subscription revenue model and validated willingness-to-pay through 20+ parent interviews\"",
+      "TODO: e.g. \"Placed 3rd/100 at BYU PitchFest ($1K) and 1st/8 at Coder Central Incubator ($500)\""
+    ],
+    image: null,
+    imageAlt: "TeenTaskForce Figma prototype",
+    snippet: null
+  }
+};
+
+/* ─── Modal helpers ─────────────────────────────────────────────────────────── */
+function buildTechTag(label) {
+  return `<span class="tech-tag">${label}</span>`;
+}
+
+function buildModalBody(proj) {
+  const imageSec = proj.image
+    ? `<img src="${proj.image}" alt="${proj.imageAlt}" style="width:100%;border-radius:10px;margin-bottom:1rem"/>`
+    : `<div class="modal-image-placeholder">
+         📸 Add a screenshot here by setting <code style="font-size:0.75rem">image: "img/YOUR_FILE.png"</code> in the PROJECTS object above.
+       </div>`;
+
+  const snippetSec = proj.snippet
+    ? `<div class="modal-section">
+         <div class="modal-section-label">Code highlight</div>
+         <div class="modal-code-placeholder">${escHtml(proj.snippet)}</div>
+       </div>`
+    : '';
+
+  const linksSec = proj.github
+    ? `<div class="modal-section">
+         <div class="modal-section-label">Links</div>
+         <div class="modal-links">
+           <a href="${proj.github}" class="modal-link-btn primary" target="_blank" rel="noopener">↗ View on GitHub</a>
+         </div>
+       </div>`
+    : `<div class="modal-section">
+         <div class="modal-section-label">Links</div>
+         <p style="font-style:italic;color:var(--light);font-size:0.85rem">GitHub repo coming soon.</p>
+       </div>`;
+
+  const bullets = proj.details.map(d => `<li>${d}</li>`).join('');
+
+  return `
+    <div class="modal-section">
+      <div class="modal-section-label">Overview</div>
+      <p>${proj.overview}</p>
+    </div>
+    <div class="modal-section">
+      <div class="modal-section-label">Highlights</div>
+      <ul>${bullets}</ul>
+    </div>
+    <div class="modal-section">
+      <div class="modal-section-label">Visuals</div>
+      ${imageSec}
+    </div>
+    ${snippetSec}
+    ${linksSec}
+  `;
+}
+
+function escHtml(str) {
+  return str.replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;');
+}
+
+function openModal(key) {
+  const proj = PROJECTS[key];
+  if (!proj) return;
+
+  document.getElementById('modal-title').textContent = proj.title;
+
+  const meta = document.getElementById('modal-meta');
+  meta.innerHTML = '';
+  if (proj.award) {
+    const badge = document.createElement('span');
+    badge.className = 'proj-award';
+    badge.textContent = proj.award;
+    meta.appendChild(badge);
+  }
+  proj.stack.forEach(s => {
+    const t = document.createElement('span');
+    t.className = 'tech-tag';
+    t.textContent = s;
+    meta.appendChild(t);
+  });
+
+  document.getElementById('modal-body').innerHTML = buildModalBody(proj);
+
+  const overlay = document.getElementById('modal-overlay');
+  overlay.classList.add('open');
+  document.body.style.overflow = 'hidden';
+}
+
+function closeModal() {
+  document.getElementById('modal-overlay').classList.remove('open');
+  document.body.style.overflow = '';
+}
+
+function handleOverlayClick(e) {
+  if (e.target === document.getElementById('modal-overlay')) closeModal();
+}
+
+document.addEventListener('keydown', e => {
+  if (e.key === 'Escape') closeModal();
+});
+</script>
+
+</body>
 </html>
