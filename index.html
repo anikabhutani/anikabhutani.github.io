@@ -507,7 +507,7 @@ footer p{font-size:0.78rem;color:rgba(255,255,255,0.25)}
 </section>
 
 <footer>
-  <p>© 2026 Anika Bhutani · Built with intention.</p>
+  <p>© 2026 Anika Bhutani</p>
 </footer>
 
 <!-- ════════════════════════════════════ JS ═══════════════════════════════════ -->
@@ -533,20 +533,26 @@ const PROJECTS = {
   smartclinical: {
     title: "Smart Clinical",
     award: "🥈 2nd Place · UC Berkeley Datathon for Social Good",
-    stack: ["Python","Streamlit","JavaScript","HTML","Tableau","Random Forest","Decision Trees","API Integration"],
+    stack: ["Python", "Streamlit", "JavaScript", "HTML", "Tableau", "Random Forest", "Decision Trees", "API Integration"],
     github: "https://github.com/anikabhutani/datathon2025",
-    // ─── TODO: fill these in ───
-    overview: "TODO: 2–3 sentences on the problem you were solving and your role. E.g. \"Emergency departments face chronic resource shortages. Smart Clinical predicts patient acuity from vitals and automatically recommends ICU vs. general ward allocation, cutting manual triage time.\"",
+
+    overview: "Hospitals facing critical shortages of oxygen, nurses, and monitors must decide who receives care first — a decision with life-or-death consequences and serious equity risks. SmartClinical is a fairness-aware clinical decision-support tool that predicts patient risk level (Normal/Low/Medium/High) from vitals using a Random Forest classifier, then automatically allocates limited resources via five configurable optimization policies to reduce mortality equitably.",
+
     details: [
-      "TODO: Key technical detail — e.g. \"Trained a Random Forest on 10k+ patient records; feature importance guided by domain expert input\"",
-      "TODO: e.g. \"Streamlit front-end queries a Flask micro-API; results rendered live in a Tableau-embedded dashboard\"",
-      "TODO: e.g. \"Placed 2nd out of all competing teams; judges praised the explainability layer built on top of the model\""
+      "Trained a Random Forest classifier on patient vital signs (respiratory rate, oxygen saturation, systolic BP, heart rate, temperature, consciousness, O2 scale) achieving 95% accuracy on held-out validation data with an 80/20 stratified split.",
+      "Used One-Hot Encoding for categorical features and engineered a composite 'Oxygen Need' feature based on respiratory rate and oxygen saturation thresholds to improve model performance.",
+      "Built five resource allocation policies — First-Come-First-Serve, High-Risk, Oxygen-First, High-Risk & Oxygen combined, and a Fairness-based clustering approach — so hospitals can choose the tradeoff between clinical urgency and equitable distribution.",
+      "FastAPI backend exposes /predict and /allocate endpoints; Streamlit frontend supports CSV batch upload or manual entry, with live allocation results rendered in a dashboard showing per-patient risk scores, oxygen/staff assignments, and resource utilization summaries.",
+      "Placed 2nd out of all competing teams; judges highlighted the fairness-aware design and the multi-policy simulation framework as standout contributions for real-world clinical applicability."
     ],
-    image: null, // e.g. "img/smartclinical-demo.png"
+
+    image: "assets/smart_clinical_img.png",
     imageAlt: "Smart Clinical app screenshot",
-    snippet: null
-    // snippet example:
-    // snippet: `clf = RandomForestClassifier(n_estimators=200, max_depth=8)\nclf.fit(X_train, y_train)\nprint(f"Val accuracy: {clf.score(X_val, y_val):.3f}")`
+
+    snippet: `clf = RandomForestClassifier(n_estimators=100, random_state=42)
+    clf.fit(X_train, y_train)
+    print(f"Val accuracy: {clf.score(X_val, y_val):.3f}")
+    # → Val accuracy: 0.950`
   },
 
   acoustic: {
